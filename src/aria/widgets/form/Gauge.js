@@ -28,7 +28,13 @@ Aria.classDefinition({
      * @param {aria.templates.TemplateCtxt} ctxt template context
      */
     $constructor : function (cfg, ctxt) {
-        this.$Widget.constructor.apply(this, arguments);
+        /**
+		 * setting class path of the Config Bean to validate with widget configuration.
+		 * @protected
+		 * @type String
+		 */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.GaugeCfg";
+		this.$Widget.constructor.apply(this, arguments);
         this._cfg = cfg;
         this.__setSkinObj("Gauge");
         // Show the label either if it has fixed width (for alignment) or if there's something to show

@@ -30,6 +30,12 @@ Aria.classDefinition({
      */
     $constructor : function (cfg, ctxt) {
         this._setAutomaticBindings(cfg);
+		/**
+		 * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.InputCfg";
         this.$Widget.constructor.apply(this, arguments);
         /**
          * 1 Minimum width in px that must be kept for the input markup To be overridden by sub-classes

@@ -24,7 +24,12 @@ Aria.classDefinition({
     $dependencies : ['aria.utils.Dom'],
     $css : ['aria.widgets.IconStyle'],
     $constructor : function (cfg, ctxt) {
-
+	    /**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.IconCfg"; 
         this.$Widget.constructor.apply(this, arguments);
 
         /**

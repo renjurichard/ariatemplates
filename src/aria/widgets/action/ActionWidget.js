@@ -28,7 +28,13 @@ Aria.classDefinition({
      * @param {aria.templates.TemplateCtxt} ctxt template context
      */
     $constructor : function () {
-        this.$Widget.constructor.apply(this, arguments);
+        /**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.ActionWidgetCfg"; 
+		this.$Widget.constructor.apply(this, arguments);
 
         /**
          * TODOC

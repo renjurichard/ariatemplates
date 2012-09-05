@@ -41,7 +41,14 @@ Aria.classDefinition({
             this._skinnableClass = "TextInput";
         }
 
-        this.$InputWithFrame.constructor.apply(this, arguments);
+        /**
+		  * setting class path of the Config Bean to validate with widget configuration.
+		  * @protected
+		  * @type String
+		  */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TextInputCfg"; 
+		
+		this.$InputWithFrame.constructor.apply(this, arguments);
 
         /**
          * Minimum width in px that must be kept for the input markup.

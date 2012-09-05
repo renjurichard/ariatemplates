@@ -29,7 +29,13 @@ Aria.classDefinition({
      * @param {aria.templates.TemplateCtxt} ctxt template context
      */
     $constructor : function (cfg, ctxt) {
-        this.$ActionWidget.constructor.apply(this, arguments);
+        /**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.LinkCfg"; 
+		this.$ActionWidget.constructor.apply(this, arguments);
         this._pressed = false;
         this._customTabIndexProvided = true;
         /**

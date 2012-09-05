@@ -43,7 +43,13 @@
             timer = null;
         },
         $constructor : function (cfg, ctxt) {
-            this.$Container.constructor.apply(this, arguments);
+            /**
+		     * setting class path of the Config Bean to validate with widget configuration.
+		     * @protected
+		     * @type String
+		     */
+			this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TooltipCfg";
+			this.$Container.constructor.apply(this, arguments);
             this._associatedWidget = null;
             this._showTimeout = null;
             this._popup = null; // will contain the popup object when displayed

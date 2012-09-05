@@ -28,7 +28,13 @@ Aria.classDefinition({
         if (!this._skinnableClass) {
             this._skinnableClass = "MultiSelect";
         }
-        var controller = new aria.widgets.controllers.MultiSelectController();
+        /**
+		 * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.MultiSelectCfg";
+		var controller = new aria.widgets.controllers.MultiSelectController();
 
         // The following line was added for PTR 04557432: if the value in cfg is not set to [] as a default, then the
         // handle specified as the onchange configuration property will be executed also on the first click

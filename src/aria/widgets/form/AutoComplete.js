@@ -40,8 +40,14 @@ Aria.classDefinition({
              */
             this._skinnableClass = "AutoComplete";
         }
-
-        var controller = new aria.widgets.controllers.AutoCompleteController();
+		 /**
+		  * setting class path of the Config Bean to validate with widget configuration.
+		  * @protected
+		  * @type String
+		  */
+         this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.AutoCompleteCfg"; 
+		 
+		var controller = new aria.widgets.controllers.AutoCompleteController();
 
         this.$DropDownTextInput.constructor.call(this, cfg, ctxt, lineNumber, controller);
 

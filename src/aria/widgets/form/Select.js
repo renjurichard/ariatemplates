@@ -28,7 +28,13 @@ Aria.classDefinition({
         if (!this._skinnableClass) {
             this._skinnableClass = "Select";
         }
-        this.$DropDownInput.constructor.call(this, cfg, ctxt, lineNumber);
+        /**
+		 * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.SelectCfg";
+		this.$DropDownInput.constructor.call(this, cfg, ctxt, lineNumber);
 
         var skinObj = this._skinObj;
         if (!skinObj.simpleHTML) {

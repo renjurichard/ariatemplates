@@ -40,7 +40,13 @@
                 // allow the skinnable class to be defined in the child class, before calling this constructor
                 this._skinnableClass = "RadioButton";
             }
-            this.$CheckBox.constructor.apply(this, arguments);
+			/**
+			 * setting class path of the Config Bean to validate with widget configuration.
+			 * @protected
+			 * @type String
+			 */
+			this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.RadioButtonCfg";
+			this.$CheckBox.constructor.apply(this, arguments);
             if (this._skinObj.simpleHTML) {
                 if (!idManager) {
                     idManager = new aria.utils.IdManager("radio");

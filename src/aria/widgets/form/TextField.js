@@ -28,7 +28,12 @@ Aria.classDefinition({
      */
     $constructor : function (cfg, ctxt, lineNumber) {
         var controller = new aria.widgets.controllers.TextDataController();
-
+		/**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TextFieldCfg";
         this.$TextInput.constructor.call(this, cfg, ctxt, lineNumber, controller);
 
         // The following change was creating non regressions and has been removed

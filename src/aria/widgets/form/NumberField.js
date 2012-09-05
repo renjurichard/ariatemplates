@@ -28,6 +28,12 @@ Aria.classDefinition({
      */
     $constructor : function (cfg, ctxt, lineNumber) {
         var controller = new aria.widgets.controllers.NumberController();
+		/**
+		 * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.NumberFieldCfg";
         if (cfg.pattern) {
             controller.setPattern(cfg.pattern);
         }

@@ -28,7 +28,13 @@ Aria.classDefinition({
      */
     $constructor : function (cfg, ctxt, lineNumber) {
         var controller = new aria.widgets.controllers.TimeController(cfg);
-        controller.setPattern(cfg.pattern);
+		/**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TimeFieldCfg";
+	   controller.setPattern(cfg.pattern);
         this.$TextInput.constructor.call(this, cfg, ctxt, lineNumber, controller);
     },
     $prototype : {}

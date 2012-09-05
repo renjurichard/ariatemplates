@@ -29,7 +29,13 @@ Aria.classDefinition({
         }
     },
     $constructor : function (cfg, ctxt) {
-        aria.widgets.Template.superclass.constructor.apply(this, arguments);
+        /**
+         * setting class path of the Config Bean to validate with widget configuration.
+         * @protected
+         * @type String
+         */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TemplateCfg"; 
+		aria.widgets.Template.superclass.constructor.apply(this, arguments);
 
         if (cfg.width != -1) {
             // horizontal scrollbars

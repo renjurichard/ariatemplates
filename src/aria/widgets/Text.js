@@ -28,7 +28,11 @@ Aria.classDefinition({
      * @param {aria.templates.TemplateCtxt} ctxt template context
      */
     $constructor : function (cfg, ctxt) {
-        this.$Widget.constructor.apply(this, arguments);
+       /*
+        * setting class path of the Config Bean to validate with widget configuration.
+        */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.TextCfg";
+		this.$Widget.constructor.apply(this, arguments);
 
         if (aria.utils.Type.isString(cfg.ellipsis)) {
             this._activateEllipsis = true;
