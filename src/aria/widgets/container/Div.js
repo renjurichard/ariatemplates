@@ -28,7 +28,13 @@ Aria.classDefinition({
      * @param {aria.templates.TemplateCtxt} ctxt template context
      */
     $constructor : function (cfg, ctxt) {
-        this.$Container.constructor.apply(this, arguments);
+        /**
+		 * setting class path of the Config Bean to validate with widget configuration.
+		 * @protected
+		 * @type String
+		 */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.DivCfg"; 
+		this.$Container.constructor.apply(this, arguments);
         // make a call to the AriaSkinInterface to get access to the skin object applicable here
         if (!this._frame) {
             /* this._frame could be overriden in sub-classes */

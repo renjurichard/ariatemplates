@@ -27,6 +27,12 @@ Aria.classDefinition({
         if (!cfg) {
             cfg = {};
         }
+		/**
+		 * setting class path of the Config Bean to validate with widget configuration.
+		 * @protected
+		 * @type String
+		 */
+		this._cfgBean = this._cfgBean || "aria.widgets.CfgBeans.ListCfg";
         this.$TemplateBasedWidget.constructor.apply(this, arguments);
         var realSkinObj = aria.widgets.AriaSkinInterface.getSkinObject("List", cfg.sclass);
         var skinObj = aria.utils.Json.copy(realSkinObj, false);
